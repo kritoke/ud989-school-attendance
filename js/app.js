@@ -55,8 +55,32 @@ $(function() {
     };
 
     var view = {
+        init: function() {
+            this.$allMissed = $('tbody .missed-col');
+            this.$allCheckboxes = $('tbody input');
 
-    };
+            $allCheckboxes.on('click', function() {
+                var studentRows = $('tbody .student'),
+                    newAttendance = {};
+
+                studentRows.each(function() {
+                    var name = $(this).children('.name-col').text(),
+                        $allCheckboxes = $(this).children('td').children('input');
+
+                    newAttendance[name] = [];
+
+                    $allCheckboxes.each(function() {
+                        newAttendance[name].push($(this).prop('checked'));
+                    });
+                });
+            });
+            this.render();
+        },
+
+        render: function() {
+
+        }
+    }
 
 }());
 
