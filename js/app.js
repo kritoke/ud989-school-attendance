@@ -75,6 +75,7 @@ $(function() {
                     });
                 });
 
+                view.render();
                 localStorage.attendance = JSON.stringify(newAttendance);
             });
 
