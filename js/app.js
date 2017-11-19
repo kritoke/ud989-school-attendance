@@ -59,7 +59,7 @@ $(function() {
             this.$allMissed = $('tbody .missed-col');
             this.$allCheckboxes = $('tbody input');
 
-            $allCheckboxes.on('click', function() {
+            this.$allCheckboxes.on('click', function() {
                 var studentRows = $('tbody .student'),
                     newAttendance = {};
 
@@ -69,10 +69,12 @@ $(function() {
 
                     newAttendance[name] = [];
 
-                    $allCheckboxes.each(function() {
+                    this.$allCheckboxes.each(function() {
                         newAttendance[name].push($(this).prop('checked'));
                     });
                 });
+
+                localStorage.attendance = JSON.stringify(newAttendance);
             });
             this.render();
         },
