@@ -78,9 +78,22 @@ $(function() {
         },
 
         render: function() {
+            this.$allMissed.each(function() {
+                var studentRow = $(this).parent('tr'),
+                    dayChecks = $(studentRow).children('td').children('input'),
+                    numMissed = 0;
 
+                dayChecks.each(function() {
+                    if (!$(this).prop('checked')) {
+                        numMissed++;
+                    }
+                });
+
+                $(this).text(numMissed);
+            });
         }
     }
+}
 
 }());
 
