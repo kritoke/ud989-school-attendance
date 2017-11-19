@@ -39,6 +39,7 @@ $(function() {
     var controller = {
         init: function() {
             this.checkbox();
+            view.init();
         },
 
         checkbox: function() {
@@ -76,6 +77,7 @@ $(function() {
 
                 localStorage.attendance = JSON.stringify(newAttendance);
             });
+
             this.render();
         },
 
