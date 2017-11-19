@@ -42,7 +42,7 @@ $(function() {
         },
 
         checkbox: function() {
-            $.each(attendance, function(name, days) {
+            $.each(model.attendance, function(name, days) {
                 var studentRow = $('tbody .name-col:contains("' + name + '")').parent('tr'),
                     dayChecks = $(studentRow).children('.attend-col').children('input');
 
@@ -92,7 +92,8 @@ $(function() {
                 $(this).text(numMissed);
             });
         }
-    }
+    };
+    controller.init();
 }());
 
 // $(function() {
