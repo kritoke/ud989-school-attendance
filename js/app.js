@@ -70,7 +70,7 @@ $(function() {
 
                     newAttendance[name] = [];
 
-                    this.$allCheckboxes.each(function() {
+                    $allCheckboxes.each(function() {
                         newAttendance[name].push($(this).prop('checked'));
                     });
                 });
